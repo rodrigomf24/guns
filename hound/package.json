@@ -1,0 +1,18 @@
+{
+  "name": "hound",
+  "version": "1.0.0",
+  "description": "Service that imports inventory into database, the name makes reference to the Transformer Hound(an autobot commando who transforms into a dark green Oshkosh Defence Medium Tactical Vehicle.",
+  "main": "server.js",
+  "scripts": {
+    "test": "hound:test"
+  },
+  "keywords": [
+    "import",
+    "inventory"
+  ],
+  "author": "Rodrigo Morales",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^14.1.0"
+  }
+}
