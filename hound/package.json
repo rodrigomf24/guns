@@ -14,5 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "hapi": "^14.1.0"
+  },
+  "devDependencies": {
+    "csv-to-json": "^0.1.2"
   }
 }
