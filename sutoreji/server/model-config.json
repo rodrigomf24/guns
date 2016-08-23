@@ -32,8 +32,8 @@
     "dataSource": "db",
     "public": false
   },
-  "product": {
-    "dataSource": "db",
+  "Product": {
+    "dataSource": "sutoreji",
     "public": true
   }
 }

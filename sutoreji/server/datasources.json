@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "sutoreji": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://sutoreji:123@localhost/sutoreji",
+    "database": "sutoreji",
+    "password": "123",
+    "name": "sutoreji",
+    "user": "sutoreji",
+    "connector": "postgresql"
+  }
+}
