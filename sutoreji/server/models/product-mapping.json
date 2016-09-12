@@ -1,0 +1,58 @@
+{
+  "name": "ProductMapping",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mappingname": {
+      "type":"string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default":"name"
+    },
+    "sku": {
+      "type": "string",
+      "required": true,
+      "default": "sku"
+    },
+    "vendorcode": {
+      "type": "string",
+      "required": true,
+      "default": "vendorcode"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "default": "description"
+    },
+    "images": {
+      "type": "object",
+      "required": true,
+      "default": "images"
+    },
+    "price": {
+      "type": "string",
+      "required": true,
+      "default": "price"
+    },
+    "cost": {
+      "type": "string",
+      "required": true,
+      "default": "cost"
+    },
+    "excerpt": {
+      "type": "string",
+      "required": true,
+      "default": "excerpt"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

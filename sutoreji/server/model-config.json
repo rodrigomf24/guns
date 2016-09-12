@@ -35,5 +35,9 @@
   "Product": {
     "dataSource": "sutoreji",
     "public": true
+  },
+  "ProductMapping": {
+    "dataSource": "sutoreji",
+    "public": true
   }
 }

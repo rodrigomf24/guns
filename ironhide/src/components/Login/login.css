@@ -1,0 +1,16 @@
+.form-signin-heading {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form-signin-heading img{
+    width:250px;
+    height: auto;
+}
+
+.forgot-pass{
+    color:#fff;
+    margin-top:25px;
+    cursor: pointer;
+}

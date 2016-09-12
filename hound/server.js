@@ -1,9 +1,14 @@
 'use strict';
 
 const Hapi = require('hapi');
+const Handlers = require('./handlers/entry.js');
 
-const HoundReader = require('./modules/CsvReader.js');
-const HoundTools = require('./modules/Tools.js');
+const fileUploadPayloadSettings = {
+	output:'stream',
+	parse:true,
+	maxBytes:52428800,
+	allow:'multipart/form-data'
+};
 
 //Create a server with a host and port
 const server = new Hapi.Server({debug:{request:['error']}});
@@ -23,31 +28,27 @@ server.route({
 
 server.route({
 	method:'POST',
-	path:'/importfromprovider',
+	path:'/api/v1/mapping/extractheaders',
+	config:{
+		payload:fileUploadPayloadSettings,
+		handler: Handlers.mapping.extractHeaders
+	}
+});
+
+server.route({
+	method:'POST',
+	path:'/api/v1/mapping/create',
 	config: {
-		payload: {
-			output:'stream',
-			parse:true,
-			maxBytes:52428800,
-			allow:'multipart/form-data'
-		},
-		handler: function (request, reply) {
-			HoundTools.handleFileUpload(request.payload).then(function(filepath) {
-				if(filepath) {
-					HoundReader.getData(filepath).then(function(response) {
-						HoundTools.cleanDataFromObject(response).then(function(response) {
-							reply(response);
-						}, function(err) { reply(err); });
-	                	        }, function(err) {
-        		                        console.log(err);
-						reply(JSON.stringify(err));
-	        	                });
-				}				
-			}, function(err) {
-				console.log(err);
-				reply(JSON.stringify(err));
-			});
-		}
+		handler: Handlers.mapping.createMapping
+	}
+});
+
+server.route({
+	method:'POST',
+	path:'/api/v1/import/fromprovider',
+	config: {
+		payload: fileUploadPayloadSettings,
+		handler: Handlers._import.importFromProvider
 	}
 });
 

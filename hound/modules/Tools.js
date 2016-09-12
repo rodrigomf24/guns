@@ -38,7 +38,6 @@ Tools.prototype.cleanDataFromObject = function(data) {
 					tempObject[cleanKey] = curr[key];
 					count++;
 					if(count === Object.keys(curr).length) {
-						console.log(tempObject);
 						acc.push(tempObject);
 						return acc;
 					}

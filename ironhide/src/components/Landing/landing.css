@@ -1,0 +1,83 @@
+.landing{
+    height: 100vh;
+    background-color: #222;
+    margin: 0;
+    width: 100%;
+    padding:0;
+}
+
+.wrapper{
+    display:flex;
+    display: -webkit-flex;
+    width:100%;
+    padding: 10px;
+    height:100%;
+}
+
+.content{
+    margin:auto;
+}
+
+.masthead {
+    position: fixed;
+    top: 0;
+    padding:20px;
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+}
+
+.masthead img{
+    width:44px;
+    height: auto;
+}
+
+/*Header navigation*/
+
+.masthead-nav > li {
+  display: inline-block;
+  cursor: pointer;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+    text-align: center;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead-brand{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .masthead-nav {
+    text-align: center;
+  }
+}
