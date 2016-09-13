@@ -7,13 +7,13 @@
   },
   "properties": {
     "mappingname": {
-      "type":"string",
+      "type": "string",
       "required": true
     },
     "name": {
       "type": "string",
       "required": true,
-      "default":"name"
+      "default": "name"
     },
     "sku": {
       "type": "string",
@@ -53,6 +53,13 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
