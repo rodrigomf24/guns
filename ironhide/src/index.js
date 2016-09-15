@@ -1,5 +1,5 @@
 // import './../node_modules/bootstrap/dist/css/bootstrap.css'
-import './../node_modules/bootstrap/dist/css/bootstrap-theme-sandstone.css'
+import './../node_modules/bootstrap/dist/css/sandstone.css'
 import './../node_modules/bootstrap/dist/js/bootstrap.js'
 import './../node_modules/bootstrap/dist/js/bootstrap.min.js'
 
@@ -20,19 +20,19 @@ import { App, Login, Dashboard, Landing } from './components'
 const reducer = combineReducers({
   ...reducers,
   routing: routerReducer
-})
+});
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey='ctrl-h' changePositionKey='ctrl-q' defaultIsVisible={false}>
     <LogMonitor theme='tomorrow' preserveScrollTop={false} />
   </DockMonitor>
-)
+);
 
 const store = createStore(
   reducer,
   DevTools.instrument()
-)
-const history = syncHistoryWithStore(browserHistory, store)
+);
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -50,6 +50,6 @@ ReactDOM.render(
     </div>
   </Provider>,
   document.getElementById('root')
-)
+);
 
 //<Route path="dashboard" component={Dashboard}/>

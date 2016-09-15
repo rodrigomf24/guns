@@ -9,18 +9,3 @@ UsersMigration().then(function() {
 }, function(err) {
 	throw err;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
