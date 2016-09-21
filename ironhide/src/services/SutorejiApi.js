@@ -1,7 +1,11 @@
 import UserService from './UserService';
 
-const SutorejiApi = function() {};
+const API = 'http://104.236.187.60:9999/api/';
 
-SutorejiApi.prototype.user = UserService;
+const SutorejiApi = function(endpoint) {
+    this.endpoint = endpoint;
+};
 
-export default new SutorejiApi();
+SutorejiApi.prototype.user = new UserService(API);
+
+export default new SutorejiApi(API);

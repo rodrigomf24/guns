@@ -8,21 +8,25 @@ import Api from './../../services/SutorejiApi';
 import { setEmail, setPassword } from './../../actions/login';
 import { login } from './../../actions/session';
 
+import { Row, Col } from 'reactstrap';
+
 const loginUser = function(email, password, login) {
-    // Api.user.login(email, password).then(function(credentials) {
-    //     login(credentials.id, credentials.userId);
-    //     browserHistory.push('/dashboard');
-    // }, function(err) {
-    //     // raise error notification
-    // });
-    browserHistory.push('/dashboard');
+    Api.user.login(email, password).then(function(credentials) {
+        login(credentials.id, credentials.userId);
+        console.log(credentials);
+        if(typeof(credentials) === 'object' && credentials.id) {
+            browserHistory.push('/dashboard');
+        }
+    }, function(err) {
+        // raise error notification
+    });
 };
 
 function Login({ email, password, authToken, loginStatus, userId, setEmail, setPassword, login }) {
     return (
-        <div className="row full-height">
+        <Row className="full-height">
             <div className="flex-container">
-                <form className="form-signin flex-child">
+                <div className="form-signin flex-child">
                     <div className="form-signin-heading">
                         <img src={logo}/>
                     </div>
@@ -47,9 +51,9 @@ function Login({ email, password, authToken, loginStatus, userId, setEmail, setP
                     <div className="center-block forgot-pass text-center">
                         <small><em>Forgot your password?</em></small>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </Row>
     );
 }
 

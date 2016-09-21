@@ -1,25 +1,31 @@
-import './landing.css'
-import logo from './../../images/blaster.svg'
-import React from 'react'
-import { browserHistory } from 'react-router'
+import './landing.css';
+import logo from './../../images/blaster.svg';
+import React from 'react';
+import { browserHistory } from 'react-router';
+import { Navbar, Nav, NavItem, NavLink, Col } from 'reactstrap';
+
 
 function Landing() {
   return (
     <div className="landing">
         <div className="masthead clearfix">
             <div className="inner">
-                <div className="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <Col xs="12" sm="2" md="2" lg="2">
                     <div className="masthead-brand">
-                        <img src={logo}/>
+                        <img src={logo} alt="logo"/>
                     </div>
-                </div>
-                <div className="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-                    <nav>
-                        <ul className="nav masthead-nav">
-                            <li><a onClick={() => browserHistory.push('/login')}>Login</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                </Col>
+                <Col xs="12" sm="10" md="10" lg="10">
+                    <Navbar>
+                        <Nav className="masthead-nav">
+                            <NavItem>
+                                <NavLink onClick={() => browserHistory.push('/login')}>
+                                    <i className="material-icons d-inline-block">person</i> Login
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Navbar>
+                </Col>
             </div>
         </div>
         <div className="wrapper">
