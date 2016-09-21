@@ -1,7 +1,6 @@
 // import './../node_modules/bootstrap/dist/css/bootstrap.css'
 import './../node_modules/bootstrap/dist/css/sandstone.css'
 import './../node_modules/bootstrap/dist/js/bootstrap.js'
-import './../node_modules/bootstrap/dist/js/bootstrap.min.js'
 
 import { createDevTools } from 'redux-devtools'
 import LogMonitor from 'redux-devtools-log-monitor'
