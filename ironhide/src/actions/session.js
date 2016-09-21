@@ -1,19 +1,20 @@
 import { LOGIN, LOGOUT } from '../constants';
 
-export function login(token, id) {
+export function login(token, id, userInfo) {
   return {
     type: LOGIN,
-    status:true,
-    token,
-    id
+    payload:{
+      status:true,
+      token,
+      id,
+      userInfo
+    }
   };
 };
 
 export function logout() {
   return {
     type: LOGOUT,
-    status:false,
-    token:void(0),
-    id:void(0)
+    payload:{}
   };
 };

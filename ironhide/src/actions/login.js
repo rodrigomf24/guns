@@ -1,4 +1,4 @@
-import { SET_EMAIL, SET_PASSWORD, GET_CREDENTIALS } from '../constants';
+import { SET_EMAIL, SET_PASSWORD } from '../constants';
 
 export function setEmail(email) {
   return {

@@ -1,8 +1,21 @@
-import React from 'react'
-import { Link, browserHistory } from 'react-router'
+import React from 'react';
+import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
-export default function Dashboard({ children }) {
+const titleStyle = {color:'#fff'};
+
+function Dashboard({ user }) {
   return (
-    <h1> Welcome! </h1>
+    <div style={titleStyle}>
+      <h1> Welcome! {user.username}</h1>
+      <a onClick={ () => browserHistory.push('/') }>Go to Landing</a>
+    </div>
   )
 }
+
+export default connect(
+    state => ({
+        user:state.session.user
+    }),
+    {}
+)(Dashboard)

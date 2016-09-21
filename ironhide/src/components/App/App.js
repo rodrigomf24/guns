@@ -1,7 +1,6 @@
-import './app.css'
-import background from './../../images/footer_lodyas.png'
-import React from 'react'
-import { Link, browserHistory } from 'react-router'
+import './app.css';
+import background from './../../images/footer_lodyas.png';
+import React from 'react';
 
 const appWrapperStyles = {
   backgroundImage: 'url(' + background + ')'
@@ -15,4 +14,4 @@ export default function App({ children }) {
       </div>
     </div>
   )
-}
+};

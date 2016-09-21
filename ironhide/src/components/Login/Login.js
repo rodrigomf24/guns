@@ -8,12 +8,11 @@ import Api from './../../services/SutorejiApi';
 import { setEmail, setPassword } from './../../actions/login';
 import { login } from './../../actions/session';
 
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 const loginUser = function(email, password, login) {
     Api.user.login(email, password).then(function(credentials) {
-        login(credentials.id, credentials.userId);
-        console.log(credentials);
+        login(credentials.id, credentials.userId, credentials.userInfo);
         if(typeof(credentials) === 'object' && credentials.id) {
             browserHistory.push('/dashboard');
         }
@@ -28,7 +27,7 @@ function Login({ email, password, authToken, loginStatus, userId, setEmail, setP
             <div className="flex-container">
                 <div className="form-signin flex-child">
                     <div className="form-signin-heading">
-                        <img src={logo}/>
+                        <img src={logo} alt="logo"/>
                     </div>
                     <FormGroup>
                         <Label for="inputEmail" className="sr-only">Email address</Label>
@@ -58,7 +57,7 @@ function Login({ email, password, authToken, loginStatus, userId, setEmail, setP
 }
 
 export default connect(
-    state => ({ 
+    state => ({
         email: state.login.email,
         password: state.login.password,
         authToken:state.session.authToken,
