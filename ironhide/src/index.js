@@ -1,4 +1,5 @@
 import './../node_modules/bootstrap/dist/css/bootstrap.css';
+import './../node_modules/bootstrap/dist/themes/sandstone.css';
 import './../node_modules/material-design-icons/iconfont/material-icons.css';
 
 import { createDevTools } from 'redux-devtools';
